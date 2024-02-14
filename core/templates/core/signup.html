@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %} {% block title %} wellcome {% endblock %} 
+{%block content %}
+
+<h1>Sign up.</h1>
+
+<div style='border:2px solid blue'>
+  <form method="POST" action=".">
+
+    {{ form.none_field_errors }}
+    
+    {% csrf_token %}
+
+     {{ form.as_p }}
+
+
+    <bottun type="submit" > SUBMIT </bottun>
+  </form>
+</div>
+
+{% endblock %}

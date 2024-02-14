@@ -11,8 +11,8 @@
       <li><a href=" {% url 'core:contact' %} ">Contact</a></li>
       <li><a href="#">New Item</a></li>
       <li><a href="#">Browse</a></li>
-      <li><a href="#">Sign in</a></li>
-      <li><a href="#">Sign up</a></li>
+      <li><a href="#"><h3>Sign in</h3></a></li>
+      <li><a href="{% url 'core:signup' %}"><h3>Sign up</h3></a></li>
     </ul>
     {% block content %} {% endblock %}
   </body>
