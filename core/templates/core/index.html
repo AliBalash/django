@@ -1,16 +1,20 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base.html' %} {% block title %} wellcome {% endblock %} 
+{%block content %}
 
-{% block title %}
-  wellcome
-{% endblock %}
-
-
-{% block content %}
-  <img src="https://images.unsplash.com/photo-1465188162913-8fb5709d6d57" width="500" />
-  <h1>This is a simple title created within HTML.</h1>
-  <p>This is a simple paragraph created within HTML.</p>
-
-  <p>
-    Image Source: <a href="http://www.unsplash.com" target="_blank">Unsplash</a>
-  </p>
+<h1>This is Home page.</h1>
+{% for item in items %}
+<a href="{% url 'item:detail' item.id %}">
+<div style="border: 2px solid red;display: flex;width: 200px;">
+      <div>
+      <img src="{{item.image.url}}" width="70" alt="{{item.image.name}}"/>
+    
+    
+    </div>
+    <div>
+      <h3>{{item.name}}</h3>
+      <p>Price: {{item.price}}</p>
+    </div>
+  </div>
+</a>
+{% endfor %} 
 {% endblock %}

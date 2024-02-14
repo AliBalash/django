@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %} 
+{% block title %} {{item.name}} {% endblock %}
+
+{%block content %}
+
+<div style="border :2px solid green;display:inline-block">
+  <img src="{{item.image.url}}" width="300" />
+  <h1>{{item.name}}</h1>
+  <p>Price : {{item.price}}</p>
+  <p>Seller : {{item.creator}}</p>
+  <p>Category : {{item.category}}</p>
+  <strong>Description : {{item.description}}</strong>
+</div>
+
+
+
+<h2>Related Item</h2>
+{% for item in related_items %}
+
+<div style="border :2px solid blue;;display:inline-block">
+  <img src="{{item.image.url}}" width="300" />
+  <h1>{{item.name}}</h1>
+  <p>Price : {{item.price}}</p>
+  <p>Seller : {{item.creator}}</p>
+  <strong>Description : {{item.description}}</strong>
+</div>
+{% endfor %}
+<div>
+
+</div>
+
+{% endblock %}
