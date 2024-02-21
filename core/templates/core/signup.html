@@ -1,20 +1,35 @@
-{% extends 'core/base.html' %} {% block title %} wellcome {% endblock %} 
-{%block content %}
+{% extends 'core/base.html' %} {% block title %}
+  wellcome
+{% endblock %}
+{% block content %}
+  <h1>Sign up.</h1>
 
-<h1>Sign up.</h1>
-
-<div style='border:2px solid blue'>
-  <form method="POST" action=".">
-
-    {{ form.none_field_errors }}
-    
-    {% csrf_token %}
-
-     {{ form.as_p }}
-
-
-    <bottun type="submit" > SUBMIT </bottun>
-  </form>
-</div>
-
+  <div style="border:2px solid blue;">
+    <form method="post" action="{% url 'core:signup' %}">
+      {% csrf_token %}
+      <div>
+        username{{ form.username }}
+        <small>{{ form.username.help_text }}</small>
+      </div>
+      <div>
+        email{{ form.email }}
+        <small>{{ form.email.help_text }}</small>
+      </div>
+      <div>
+        passaword{{ form.password1 }}
+        <small>{{ form.password1.help_text }}</small>
+      </div>
+      <div>
+        confirm password{{ form.password2 }}
+        <small>{{ form.password2.help_text }}</small>
+      </div>
+      <div>
+        <button type="submit">submit</button>
+      </div>
+      {{ form.email.errors }}
+      {{ form.username.errors }}
+      {{ form.password1.errors }}
+      {{ form.password2.errors }}
+    </form>
+  </div>
 {% endblock %}
