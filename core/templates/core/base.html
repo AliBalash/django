@@ -11,7 +11,7 @@
       <li><a href=" {% url 'core:contact' %} ">Contact</a></li>
     
       {% if request.user.is_authenticated %}
-        <li><a href="#">New Item</a></li>
+        <li><a href=" {% url "item:new" %} ">New Item</a></li>
         <li><a href="#">Browse</a></li>
       {% else %}
         <li><a href="{% url "core:login" %}"><h3>Login</h3></a></li>

@@ -22,7 +22,7 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')  # Redirect to login page after successful signup
+            return redirect('core:login')  # Redirect to login page after successful signup
     else:
         form = SignUpForm()
     return render(request, 'core/signup.html', {'form': form})
@@ -43,5 +43,4 @@ def login(request):
         form = LoginForm()
     return render(request, 'core/login.html', {'form': form})
     
-# def login():
     
